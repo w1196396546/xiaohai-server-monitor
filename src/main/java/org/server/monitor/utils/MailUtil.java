@@ -1,4 +1,4 @@
-package com.zthzinfo.utils;
+package org.server.monitor.utils;
 
 import cn.hutool.extra.mail.MailAccount;
 
@@ -13,16 +13,16 @@ public class MailUtil {
 			synchronized (MailUtil.class) {
 				if (account == null) {
 					account = new MailAccount();
-					account.setHost(ConfigUtil.configs.getStr("mail.host"));
-					account.setPort(ConfigUtil.configs.getInt("mail.port"));
-					account.setSslEnable(ConfigUtil.configs.getBool("mail.sslEnable"));
-					account.setFrom(ConfigUtil.configs.getStr("mail.from"));
+					account.setHost(ConfigUtil.SETTING.getStr("mail.host"));
+					account.setPort(ConfigUtil.SETTING.getInt("mail.port"));
+					account.setSslEnable(ConfigUtil.SETTING.getBool("mail.sslEnable"));
+					account.setFrom(ConfigUtil.SETTING.getStr("mail.from"));
 
-					Boolean auth = ConfigUtil.configs.getBool("mail.auth");
+					Boolean auth = ConfigUtil.SETTING.getBool("mail.auth");
 					account.setAuth(auth);
 					if (auth) {
-						account.setUser(ConfigUtil.configs.getStr("mail.user"));
-						account.setPass(ConfigUtil.configs.getStr("mail.pass"));
+						account.setUser(ConfigUtil.SETTING.getStr("mail.user"));
+						account.setPass(ConfigUtil.SETTING.getStr("mail.pass"));
 					}
 				}
 			}

@@ -1,5 +1,6 @@
-package org.server.monitor;
+package org.server.monitor.utils;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.setting.Setting;
 
 public class ConfigUtil {
@@ -10,5 +11,13 @@ public class ConfigUtil {
 
     public static String getApplicationName(){
         return SETTING.getStr("application.name");
+    }
+
+    public static String getApplicationName2() {
+        String applicationName = getApplicationName();
+        if (StrUtil.isBlank(applicationName)) {
+            return "";
+        }
+        return String.format("【" + applicationName + "】");
     }
 }
