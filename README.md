@@ -6,6 +6,8 @@ Server-Monitor
 判定规则十分简单
 服务正常： telnet能连通
 服务异常： telnet无法连通
+
+
 使用方法
 在jar包相同目录下，添加配置文件：config.conf，配置说明见下方
 命令：java -jar xxxx.jar
@@ -15,6 +17,8 @@ Server-Monitor
 配置多个服务，每个服务名必须写在 [ ] 中
 每个服务必须包含ip和port
 每个服务中的affects配置表示当前服务如果停止，将影响的产品或其他服务
+
+
 样例
 
 # 应用名将会体现在邮件通知的标题前缀中
